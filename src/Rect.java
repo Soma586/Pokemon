@@ -70,6 +70,15 @@ public class Rect
 				 (r.y + r.h >=   y)  &&
 				 (  y +   h >= r.y);
 	}
+	
+	public boolean overlapss(Player r)
+	{
+		return (r.x + r.w >=   x)  &&
+				 (  x +   w >= r.x)  &&
+				 (r.y + r.h >=   y)  &&
+				 (  y +   h >= r.y);
+	}
+
 
 	
 	public boolean contains(int mx, int my)
@@ -79,7 +88,8 @@ public class Rect
 	
 	public void draw(Graphics g)
 	{
-		g.drawRect(x, y, w, h);
+		g.drawRect(x - (int)Camera.x , y - (int)Camera.y, w, h);
+		//System.out.println("x: " +x + "y: " + y + "w " + w + "h " + h);
 	}
 
 }

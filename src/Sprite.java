@@ -8,7 +8,10 @@ public abstract class Sprite
 	
 	Animation[] anim;
 	
-	int pose = 0;
+	int pose = 3;
+	
+	
+	 enum direction{ up, down , left, right};
 	
 	boolean moving = false;
 	boolean faceup = false;
@@ -97,11 +100,11 @@ public abstract class Sprite
 	{
       if(moving)  
       	
-      	g.drawImage(anim[pose].getCurrentImage(), x, y, null);
+      	g.drawImage(anim[pose].getCurrentImage(), x - (int)Camera.x, y -(int)Camera.y, null);
       
       else
       	
-      	g.drawImage(anim[pose].getStillImage(), x, y, null);
+      	g.drawImage(anim[pose].getStillImage(), x - (int)Camera.x, y -(int)Camera.y , null);
       
       moving = false;
       	
