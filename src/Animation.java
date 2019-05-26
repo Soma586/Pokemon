@@ -8,6 +8,7 @@ public class Animation
 	private int     duration;
 	private int     delay;
 	
+	//this is random from github
 	public Animation(String name, int count, int duration)
 	{
 		image = new Image[count];
